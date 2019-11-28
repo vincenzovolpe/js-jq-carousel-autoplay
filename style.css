@@ -53,8 +53,15 @@
 
 #loader {
     padding: 10px;
-    background-color: black;
     color: white;
+}
+
+.stop{
+    background-color: black
+}
+
+.start{
+    background-color: #839192;
 }
 
 .pallini span.nero {

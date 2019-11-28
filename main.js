@@ -30,8 +30,10 @@ $(document).ready(function(){
     });
     // Faccio partire o stoppo l'autoplay
     $('#loader').click(function() {
-        if ($('#loader').text() !== 'Stop') {
-            $('#loader').html(("Stop"));
+        if ($('#loader').text() !== 'STOP AUTOPLAY') {
+            $('#loader').removeClass('start');
+            $('#loader').addClass('stop');
+            $('#loader').html(("STOP AUTOPLAY"));
             startAutoplay();
         } else {
             stopAutoplay();
@@ -65,7 +67,7 @@ function showimage() {
     // Aggiungo il colore nero al pallino
     $('.punto').eq(immagine_attuale).addClass('nero');
 }
-// Funzione per nascondere l'immagini e togliere il  colore al pallino il pallino
+// Funzione per nascondere l'immagini e togliere il  colore al pallino
 function hideimage() {
     // Nascondo l'immagine attualmente presente
     $('.immagine-carosello').eq(immagine_attuale).hide();
@@ -75,7 +77,9 @@ function hideimage() {
 // Funzione che ferma l'autoplay
 function stopAutoplay() {
   clearInterval(autoplay);
-  $('#loader').html(("Play"));
+  $('#loader').removeClass('stop');
+  $('#loader').addClass('start');
+  $('#loader').html(("START AUTOPLAY"));
 };
 // Funzione che fà partire l'autoplay
 function startAutoplay() {
