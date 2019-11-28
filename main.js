@@ -10,7 +10,9 @@ $(document).ready(function(){
         stopAutoplay();
         hideimage();
         // Aggiorno l'indice dell'immagine attuale
-        immagine_attuale = $(this).data('numeroimmagine') - 1;
+        //immagine_attuale = $(this).data('numeroimmagine') - 1;
+        // Posso usare index() invece di considerare il data-numeroimmagine definito per il singolo pallino
+        immagine_attuale = $(this).index();
         showimage();
     });
     // Cambio immagine cliccando sulla freccia destra
