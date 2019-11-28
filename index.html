@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="main.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="style.css">
+        <title>Carosello di immagini</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="player">
+                <button id="loader">Stop</button>
+            </div>
+            <div class="controllo indietro">
+                <span class="fa fa-arrow-circle-left"></span>
+            </div>
+            <img class="immagine-carosello" src="images/immagineuno.jpg">
+        	<img class="immagine-carosello" src="images/immaginedue.jpg">
+        	<img class="immagine-carosello" src="images/immaginetre.jpg">
+        	<img class="immagine-carosello" src="images/immaginequattro.jpg">
+        	<img class="immagine-carosello" src="images/immaginecinque.jpg">
+            <img class="immagine-carosello" src="images/immaginesei.jpg">
+            <div class="controllo avanti">
+                <span class="fa fa-arrow-circle-right"></span>
+            </div>
+            <div class="pallini">
+                <span class="punto" data-numeroimmagine='1'></span>
+                <span class="punto" data-numeroimmagine='2'></span>
+                <span class="punto" data-numeroimmagine='3'></span>
+                <span class="punto" data-numeroimmagine='4'></span>
+                <span class="punto" data-numeroimmagine='5'></span>
+                <span class="punto" data-numeroimmagine="6"></span>
+            </div>
+        </div>
+    </body>
+</html>
