@@ -1,9 +1,12 @@
 // Dichiaro una variabile in cui memorizzo l'indice dell'immagine attuale
-var immagine_attuale = 0;
-var autoplay;
+var totaleimmagini = 5; // Variabile che indica il numero delle immagini gestite
+var immagine_attuale = 0; // Variabile in cui memorizzi l'indice delle immagini
+var autoplay; // Variabile a cui assegno il setInterval da passare al clearInterval
+var attesa = 3000; // variabile che indica i secondi di caricamento di una nuova immagine
 $(document).ready(function(){
     // Mostra la prima immagine
     showimage();
+    // Faccio partire lo slider in automatico
     startAutoplay();
     // Cambio immagine cliccando sul pallino
     $('.punto').click(function() {
@@ -38,7 +41,7 @@ $(document).ready(function(){
 // Funzione per lo scorrimento delle immagini in avanti
 function forward() {
     hideimage();
-    if (immagine_attuale < 5) {
+    if (immagine_attuale < totaleimmagini) {
         immagine_attuale++;
     } else {
         immagine_attuale = 0;
@@ -51,7 +54,7 @@ function back() {
     if (immagine_attuale > 0) {
         immagine_attuale--;
     } else {
-        immagine_attuale = 5;
+        immagine_attuale = totaleimmagini;
     }
     showimage();
 };
@@ -79,5 +82,5 @@ function startAutoplay() {
     // Autoplay  dello slider
     autoplay = setInterval(function() {
         forward();
-    }, 2000);
+    }, attesa);
 }
