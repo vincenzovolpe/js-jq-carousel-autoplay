@@ -1,8 +1,8 @@
 // Dichiaro una variabile in cui memorizzo l'indice dell'immagine attuale
-var totaleimmagini = 5; // Variabile che indica il numero delle immagini gestite
+var totaleimmagini = 6; // Variabile che indica il numero delle immagini gestite
 var immagine_attuale = 0; // Variabile in cui memorizzi l'indice delle immagini
 var autoplay; // Variabile a cui assegno il setInterval da passare al clearInterval
-var attesa = 3000; // variabile che indica i secondi di caricamento di una nuova immagine
+var attesa = 3000; // variabile che indica i millisecondi di caricamento di una nuova immagine
 $(document).ready(function(){
     // Mostra la prima immagine
     showimage();
@@ -43,7 +43,7 @@ $(document).ready(function(){
 // Funzione per lo scorrimento delle immagini in avanti
 function forward() {
     hideimage();
-    if (immagine_attuale < totaleimmagini) {
+    if (immagine_attuale < totaleimmagini - 1) {
         immagine_attuale++;
     } else {
         immagine_attuale = 0;
@@ -56,7 +56,7 @@ function back() {
     if (immagine_attuale > 0) {
         immagine_attuale--;
     } else {
-        immagine_attuale = totaleimmagini;
+        immagine_attuale = totaleimmagini - 1;
     }
     showimage();
 };
